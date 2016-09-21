@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_curso"
+            android:icon="@drawable/ic_school_black_24px"
+            android:title="Iniciar Curso" />
+        <item
+            android:id="@+id/nav_premium"
+            android:icon="@drawable/ic_shopping_cart_black_24dp"
+            android:title="Conta premium" />
+        <item
+            android:id="@+id/nav_youtube"
+            android:icon="@drawable/ic_videocam_black_24px"
+            android:title="Canal Youtube" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_person_add_black_24px"
+            android:title="Cadastre-se" />
+        <item
+            android:id="@+id/nav_blog"
+            android:icon="@drawable/ic_news_black_24dp"
+            android:title="Blog" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Compartilhe" />
+            <item
+                android:id="@+id/nav_help"
+                android:icon="@drawable/ic_help_black_24px"
+                android:title="Dúvidas" />
+        </menu>
+    </item>
+
+</menu>
