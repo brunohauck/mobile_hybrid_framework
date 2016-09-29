@@ -52,9 +52,6 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
-
-
         Log.i("DEBUG ->", "Oncreate Main");
         String url = "http://www.mentorandroid.com";
         String title = "Curso Gratuito";
@@ -62,9 +59,9 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void myMethod(boolean result) {
                 if (result == true) {
-                    Log.i("DEBUG ->", "Com conexao");
-                    Toast.makeText(MainActivity.this, "Connection Succesful",
-                            Toast.LENGTH_LONG).show();
+                    //Log.i("DEBUG ->", "Com conexao");
+                    //Toast.makeText(MainActivity.this, "Connection Succesful",
+                     //       Toast.LENGTH_LONG).show();
                     Fragment fragment = new CursoFragment();
                     String title = "Curso Gratuito";
                     if (fragment != null) {
@@ -160,23 +157,6 @@ public class MainActivity extends AppCompatActivity
 
         Fragment fragment = null;
         String title = getString(R.string.app_name);
-/*
-
-nav_curso
-
-nav_premium
-
-nav_youtube
-
-nav_manage
-
-nav_blog
-
-nav_share
-
-nav_help
-
-* */
         if (id == R.id.nav_curso) {
             fragment = new CursoFragment();
             title = getString(R.string.app_name);
@@ -188,19 +168,16 @@ nav_help
             title = getString(R.string.canal_youtube);
         } else if (id == R.id.nav_manage) {
             fragment = new IndexFragment();
-            title = getString(R.string.canal_youtube);
+            title = getString(R.string.curso_completo);
         } else if (id == R.id.nav_share) {
             fragment = new ShareFragment();
-            title = getString(R.string.canal_youtube);
+            title = getString(R.string.share);
         } else if (id == R.id.nav_blog) {
             fragment = new NewsFragment();
             title = getString(R.string.blog);
         } else if (id == R.id.nav_help) {
             fragment = new HelpFragment();
-            title = getString(R.string.canal_youtube);
-            //Intent i = new Intent(this, ConectionTestActivity.class);
-            //startActivity(i);
-
+            title = getString(R.string.help);
         }
 
         if (fragment != null) {

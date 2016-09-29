@@ -46,10 +46,7 @@ public class IndexFragment extends Fragment {
             web.setWebViewClient(new myWebClient());
             showProgress(true);
             web.getSettings().setJavaScriptEnabled(true);
-
-
-
-            String url = "http://mentorandroid.com/usermentor/login";
+            String url = "http://mentorandroid.com/usermentor/login_app";
             Log.i("URL ->",url);
             web.loadUrl(url);
 

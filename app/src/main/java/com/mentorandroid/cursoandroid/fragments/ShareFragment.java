@@ -52,7 +52,6 @@ public class ShareFragment extends Fragment {
             web.setWebViewClient(new myWebClient());
             showProgress(true);
             web.getSettings().setJavaScriptEnabled(true);
-
             String url = "http://www.workmates.com.br/index.php/contato/compartilhar_marmita";
             Log.i("URL ->",url);
             web.loadUrl(url);

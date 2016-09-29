@@ -86,7 +86,7 @@ public class NewsFragment extends Fragment {
             web.setWebViewClient(new myWebClient());
             showProgress(true);
             web.getSettings().setJavaScriptEnabled(true);
-            String url = "http://mentorandroid.com/page/mobile";
+            String url = "http://mentorandroid.com/page/mobile_app";
             Log.i("URL ->",url);
             web.loadUrl(url);
 

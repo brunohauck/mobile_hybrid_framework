@@ -9,5 +9,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="canal_youtube">Canal Youtube</string>
+    <string name="share">Share</string>
+    <string name="curso_completo">Curso Completo</string>
+    <string name="help">Ajuda</string>
     <string name="blog">Blog</string>
 </resources>
