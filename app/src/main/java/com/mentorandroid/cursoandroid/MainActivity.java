@@ -52,16 +52,12 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        Log.i("DEBUG ->", "Oncreate Main");
         String url = "http://www.mentorandroid.com";
         String title = "Curso Gratuito";
         NetworkUtil task = new NetworkUtil( url, new MyInterface() {
             @Override
             public void myMethod(boolean result) {
                 if (result == true) {
-                    //Log.i("DEBUG ->", "Com conexao");
-                    //Toast.makeText(MainActivity.this, "Connection Succesful",
-                     //       Toast.LENGTH_LONG).show();
                     Fragment fragment = new CursoFragment();
                     String title = "Curso Gratuito";
                     if (fragment != null) {
@@ -69,20 +65,19 @@ public class MainActivity extends AppCompatActivity
                         ft.replace(R.id.container_body, fragment);
                         ft.commit();
                     }
-
                 } else {
-                    Toast.makeText(MainActivity.this, "Connection Failed:", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "Favor verificar sua conexao!", Toast.LENGTH_LONG).show();
                 }
             }
         });
         task.execute();
-        // set the toolbar title
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle(title);
         }
 
     }
 
+    /*
     public static boolean isReachable(String targetUrl) throws IOException {
         HttpURLConnection httpUrlConnection = (HttpURLConnection) new URL(
                 targetUrl).openConnection();
@@ -95,7 +90,7 @@ public class MainActivity extends AppCompatActivity
         } catch (UnknownHostException noInternetConnection) {
             return false;
         }
-    }
+    }*/
 
     public static boolean pingURL(String url, int timeout) {
 
@@ -162,11 +157,45 @@ public class MainActivity extends AppCompatActivity
         Fragment fragment = null;
         String title = getString(R.string.app_name);
         if (id == R.id.nav_curso) {
-            fragment = new CursoFragment();
-            title = getString(R.string.app_name);
+            String url = "http://www.mentorandroid.com";
+            NetworkUtil task = new NetworkUtil( url, new MyInterface() {
+                @Override
+                public void myMethod(boolean result) {
+                    if (result == true) {
+                        Fragment fragment = new CursoFragment();
+                        String title = "Curso Gratuito";
+                        if (fragment != null) {
+                            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                            ft.replace(R.id.container_body, fragment);
+                            ft.commit();
+                        }
+                    } else {
+                        Toast.makeText(MainActivity.this, "Favor verificar sua conexao!", Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+
+
         } else if (id == R.id.nav_premium) {
-            fragment = new IndexFragment();
-            title = getString(R.string.app_name);
+
+            String url = "http://www.mentorandroid.com";
+            NetworkUtil task = new NetworkUtil( url, new MyInterface() {
+                @Override
+                public void myMethod(boolean result) {
+                    if (result == true) {
+                        Fragment fragment = new IndexFragment();
+                        String title = getString(R.string.app_name);
+                        if (fragment != null) {
+                            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                            ft.replace(R.id.container_body, fragment);
+                            ft.commit();
+                        }
+                    } else {
+                        Toast.makeText(MainActivity.this, "Favor verificar sua conexao!", Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+
         } else if (id == R.id.nav_youtube) {
             fragment = new YouTubeFragment();
             title = getString(R.string.canal_youtube);
