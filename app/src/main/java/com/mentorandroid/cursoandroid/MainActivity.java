@@ -174,7 +174,7 @@ public class MainActivity extends AppCompatActivity
                     }
                 }
             });
-
+            task.execute();
 
         } else if (id == R.id.nav_premium) {
 
@@ -195,22 +195,113 @@ public class MainActivity extends AppCompatActivity
                     }
                 }
             });
+            task.execute();
 
         } else if (id == R.id.nav_youtube) {
-            fragment = new YouTubeFragment();
-            title = getString(R.string.canal_youtube);
+            String url = "http://www.mentorandroid.com";
+            NetworkUtil task = new NetworkUtil( url, new MyInterface() {
+                @Override
+                public void myMethod(boolean result) {
+                    if (result == true) {
+                        Fragment fragment = new  YouTubeFragment();
+                        String title = getString(R.string.canal_youtube);
+                        if (fragment != null) {
+                            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                            ft.replace(R.id.container_body, fragment);
+                            ft.commit();
+                        }
+                    } else {
+                        Toast.makeText(MainActivity.this, "Favor verificar sua conexao!", Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+            task.execute();
+
         } else if (id == R.id.nav_manage) {
-            fragment = new IndexFragment();
-            title = getString(R.string.curso_completo);
+            String url = "http://www.mentorandroid.com";
+            NetworkUtil task = new NetworkUtil( url, new MyInterface() {
+                @Override
+                public void myMethod(boolean result) {
+                    if (result == true) {
+                        Fragment fragment = new  IndexFragment();
+                        String title = getString(R.string.curso_completo);
+                        if (fragment != null) {
+                            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                            ft.replace(R.id.container_body, fragment);
+                            ft.commit();
+                        }
+                    } else {
+                        Toast.makeText(MainActivity.this, "Favor verificar sua conexao!", Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+            task.execute();
+
+
         } else if (id == R.id.nav_share) {
-            fragment = new ShareFragment();
-            title = getString(R.string.share);
+
+            String url = "http://www.mentorandroid.com";
+            NetworkUtil task = new NetworkUtil( url, new MyInterface() {
+                @Override
+                public void myMethod(boolean result) {
+                    if (result == true) {
+                        Fragment fragment = new  ShareFragment();
+                        String title = getString(R.string.share);
+                        if (fragment != null) {
+                            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                            ft.replace(R.id.container_body, fragment);
+                            ft.commit();
+                        }
+                    } else {
+                        Toast.makeText(MainActivity.this, "Favor verificar sua conexao!", Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+            task.execute();
+
         } else if (id == R.id.nav_blog) {
-            fragment = new NewsFragment();
-            title = getString(R.string.blog);
+
+            String url = "http://www.mentorandroid.com";
+            NetworkUtil task = new NetworkUtil( url, new MyInterface() {
+                @Override
+                public void myMethod(boolean result) {
+                    if (result == true) {
+                        Fragment fragment = new NewsFragment();
+                        String title = getString(R.string.blog);
+                        if (fragment != null) {
+                            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                            ft.replace(R.id.container_body, fragment);
+                            ft.commit();
+                        }
+                    } else {
+                        Toast.makeText(MainActivity.this, "Favor verificar sua conexao!", Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+            task.execute();
+
         } else if (id == R.id.nav_help) {
-            fragment = new HelpFragment();
-            title = getString(R.string.help);
+
+            String url = "http://www.mentorandroid.com";
+            NetworkUtil task = new NetworkUtil( url, new MyInterface() {
+                @Override
+                public void myMethod(boolean result) {
+                    if (result == true) {
+                        Fragment fragment = new HelpFragment();
+                        String title = getString(R.string.help);
+                        if (fragment != null) {
+                            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                            ft.replace(R.id.container_body, fragment);
+                            ft.commit();
+                        }
+                    } else {
+                        Toast.makeText(MainActivity.this, "Favor verificar sua conexao!", Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+            task.execute();
+
+
         }
 
         if (fragment != null) {

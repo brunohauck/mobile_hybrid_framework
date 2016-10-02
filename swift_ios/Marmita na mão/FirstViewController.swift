@@ -20,7 +20,7 @@ class FirstViewController: UIViewController {
         //let url = NSURL (string: "https://www.softwareon.com.br");
         //http://www.softwareon.com.br/marmita/
         
-        let url = NSURL (string: "https://www.softwareon.com.br/marmita");
+        let url = NSURL (string: "https://www.android.com/");
         
         NSURLCache.sharedURLCache().removeAllCachedResponses()
         NSURLCache.sharedURLCache().diskCapacity = 0

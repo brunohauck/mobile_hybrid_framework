@@ -25,12 +25,12 @@
                                 </connections>
                             </webView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="n7w-iv-5aU">
-                                <rect key="frame" x="280" y="266" width="20" height="20"/>
+                                <rect key="frame" x="94" y="266" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="acW-dT-cKf">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="acW-dT-cKf">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <connections>
@@ -59,12 +59,12 @@
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="OTh-Q7-vg6">
-                                <rect key="frame" x="290" y="266" width="20" height="20"/>
+                                <rect key="frame" x="130" y="251" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" badgeValue="Restaurantes" systemItem="search" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="loading" destination="OTh-Q7-vg6" id="Gyj-cJ-6fp"/>
                         <outlet property="webView" destination="VZW-X0-TUr" id="VN2-fK-bAR"/>
