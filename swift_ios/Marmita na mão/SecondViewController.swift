@@ -16,10 +16,12 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        //let url = NSURL (string: "https://www.softwareon.com.br");
+        let url = NSURL (string: "https://creator.ionic.io/share/080101d02850");
+        
+        
         //http://www.softwareon.com.br/marmita/
         
-        let url = NSURL (string: "https://getmdl.io/");
+        //let url = NSURL (string: "https://getmdl.io/");
         
         NSURLCache.sharedURLCache().removeAllCachedResponses()
         NSURLCache.sharedURLCache().diskCapacity = 0

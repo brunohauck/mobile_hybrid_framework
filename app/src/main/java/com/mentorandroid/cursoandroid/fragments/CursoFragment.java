@@ -56,10 +56,11 @@ public class CursoFragment extends Fragment {
             showProgress(true);
             web.getSettings().setJavaScriptEnabled(true);
             String url = "http://mentorandroid.com/start/iniciar_curso_gratuito_app/2";
-            //if(Util.pingURL(url,1000)){
+            //String url = "https://creator.ionic.io/share/080101d02850";
+
                 Log.i("URL ->",url);
                 web.loadUrl(url);
-            //}
+
 
 
         }else{

@@ -22,6 +22,18 @@
             android:id="@+id/nav_blog"
             android:icon="@drawable/ic_news_black_24dp"
             android:title="Blog" />
+
+        <item
+            android:id="@+id/nav_ionic"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Ionic" />
+
+        <item
+            android:id="@+id/nav_res"
+            android:icon="@drawable/ic_local_dining_black_24dp"
+            android:title="Restaurantes" />
+
+
     </group>
 
     <item android:title="Communicate">

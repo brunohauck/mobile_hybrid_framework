@@ -22,7 +22,9 @@ import android.widget.Toast;
 import com.mentorandroid.cursoandroid.fragments.CursoFragment;
 import com.mentorandroid.cursoandroid.fragments.HelpFragment;
 import com.mentorandroid.cursoandroid.fragments.IndexFragment;
+import com.mentorandroid.cursoandroid.fragments.IonicFragment;
 import com.mentorandroid.cursoandroid.fragments.NewsFragment;
+import com.mentorandroid.cursoandroid.fragments.RestaurantesFragment;
 import com.mentorandroid.cursoandroid.fragments.ShareFragment;
 import com.mentorandroid.cursoandroid.fragments.YouTubeFragment;
 import com.mentorandroid.cursoandroid.util.Util;
@@ -52,7 +54,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        String url = "http://www.mentorandroid.com";
+        String url = "http://www.google.com";
         String title = "Curso Gratuito";
         NetworkUtil task = new NetworkUtil( url, new MyInterface() {
             @Override
@@ -157,7 +159,7 @@ public class MainActivity extends AppCompatActivity
         Fragment fragment = null;
         String title = getString(R.string.app_name);
         if (id == R.id.nav_curso) {
-            String url = "http://www.mentorandroid.com";
+            String url = "http://www.google.com";
             NetworkUtil task = new NetworkUtil( url, new MyInterface() {
                 @Override
                 public void myMethod(boolean result) {
@@ -178,7 +180,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_premium) {
 
-            String url = "http://www.mentorandroid.com";
+            String url = "http://www.google.com";
             NetworkUtil task = new NetworkUtil( url, new MyInterface() {
                 @Override
                 public void myMethod(boolean result) {
@@ -198,7 +200,7 @@ public class MainActivity extends AppCompatActivity
             task.execute();
 
         } else if (id == R.id.nav_youtube) {
-            String url = "http://www.mentorandroid.com";
+            String url = "http://www.google.com";
             NetworkUtil task = new NetworkUtil( url, new MyInterface() {
                 @Override
                 public void myMethod(boolean result) {
@@ -218,7 +220,7 @@ public class MainActivity extends AppCompatActivity
             task.execute();
 
         } else if (id == R.id.nav_manage) {
-            String url = "http://www.mentorandroid.com";
+            String url = "http://www.google.com";
             NetworkUtil task = new NetworkUtil( url, new MyInterface() {
                 @Override
                 public void myMethod(boolean result) {
@@ -240,7 +242,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_share) {
 
-            String url = "http://www.mentorandroid.com";
+            String url = "http://www.google.com";
             NetworkUtil task = new NetworkUtil( url, new MyInterface() {
                 @Override
                 public void myMethod(boolean result) {
@@ -261,7 +263,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_blog) {
 
-            String url = "http://www.mentorandroid.com";
+            String url = "http://www.google.com";
             NetworkUtil task = new NetworkUtil( url, new MyInterface() {
                 @Override
                 public void myMethod(boolean result) {
@@ -282,7 +284,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_help) {
 
-            String url = "http://www.mentorandroid.com";
+            String url = "http://www.google.com";
             NetworkUtil task = new NetworkUtil( url, new MyInterface() {
                 @Override
                 public void myMethod(boolean result) {
@@ -300,6 +302,32 @@ public class MainActivity extends AppCompatActivity
                 }
             });
             task.execute();
+
+
+        }else if (id == R.id.nav_ionic) {
+
+            String url = "http://www.google.com";
+            NetworkUtil task = new NetworkUtil( url, new MyInterface() {
+                @Override
+                public void myMethod(boolean result) {
+                    if (result == true) {
+                        Fragment fragment = new IonicFragment();
+                        String title = "IONIC";
+                        if (fragment != null) {
+                            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                            ft.replace(R.id.container_body, fragment);
+                            ft.commit();
+                        }
+                    } else {
+                        Toast.makeText(MainActivity.this, "Favor verificar sua conexao!", Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+            task.execute();
+        }else if (id == R.id.nav_res) {
+
+            title = "Marmita";
+            fragment = new RestaurantesFragment();
 
 
         }
