@@ -55,11 +55,7 @@ public class YouTubeFragment extends Fragment {
             //settings.setPluginsEnabled(true);
             web.setWebViewClient(new myWebClient());
             showProgress(true);
-
             web.getSettings().setJavaScriptEnabled(true);
-
-
-
             String url = "https://www.youtube.com/channel/UClJThqbUwg0RXrizVnf8GAA";
             Log.i("URL ->",url);
             web.loadUrl(url);
