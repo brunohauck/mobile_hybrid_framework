@@ -62,7 +62,7 @@ public class RestaurantesFragment extends Fragment {
             Log.d("DEBUG","Entrou 01");
 
             //"http://www.workmates.com.br/index.php/contato/compartilhar_marmita");
-            String url = "http://www.softwareon.com.br/marmita";
+            String url = "https://www.softwareon.com.br/marmita";
 
             Log.i("URL ->",url);
             web.loadUrl(url);

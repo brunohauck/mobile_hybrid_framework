@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity
                     if (fragment != null) {
                         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                         ft.replace(R.id.container_body, fragment);
+                        ft.addToBackStack(null);
                         ft.commit();
                     }
                 } else {
@@ -94,29 +95,7 @@ public class MainActivity extends AppCompatActivity
         }
     }*/
 
-    public static boolean pingURL(String url, int timeout) {
 
-        HttpURLConnection connection = null;
-        try {
-            connection = (HttpURLConnection) new URL(url).openConnection();
-            connection.setRequestMethod("HEAD");
-            int responseCode = connection.getResponseCode();
-            if (responseCode != 200) {
-                return false;
-            } else {
-                return true;
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        }
-
-
-
-
-
-
-    }
 
     @Override
     public void onBackPressed() {
@@ -169,6 +148,7 @@ public class MainActivity extends AppCompatActivity
                         if (fragment != null) {
                             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                             ft.replace(R.id.container_body, fragment);
+                            ft.addToBackStack(null);
                             ft.commit();
                         }
                     } else {
@@ -190,6 +170,7 @@ public class MainActivity extends AppCompatActivity
                         if (fragment != null) {
                             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                             ft.replace(R.id.container_body, fragment);
+                            ft.addToBackStack(null);
                             ft.commit();
                         }
                     } else {
@@ -210,6 +191,7 @@ public class MainActivity extends AppCompatActivity
                         if (fragment != null) {
                             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                             ft.replace(R.id.container_body, fragment);
+                            ft.addToBackStack(null);
                             ft.commit();
                         }
                     } else {
@@ -230,6 +212,7 @@ public class MainActivity extends AppCompatActivity
                         if (fragment != null) {
                             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                             ft.replace(R.id.container_body, fragment);
+                            ft.addToBackStack(null);
                             ft.commit();
                         }
                     } else {
@@ -252,6 +235,7 @@ public class MainActivity extends AppCompatActivity
                         if (fragment != null) {
                             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                             ft.replace(R.id.container_body, fragment);
+                            ft.addToBackStack(null);
                             ft.commit();
                         }
                     } else {
@@ -273,6 +257,7 @@ public class MainActivity extends AppCompatActivity
                         if (fragment != null) {
                             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                             ft.replace(R.id.container_body, fragment);
+                            ft.addToBackStack(null);
                             ft.commit();
                         }
                     } else {
@@ -294,6 +279,7 @@ public class MainActivity extends AppCompatActivity
                         if (fragment != null) {
                             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                             ft.replace(R.id.container_body, fragment);
+                            ft.addToBackStack(null);
                             ft.commit();
                         }
                     } else {
@@ -302,34 +288,6 @@ public class MainActivity extends AppCompatActivity
                 }
             });
             task.execute();
-
-
-        }else if (id == R.id.nav_ionic) {
-
-            String url = "http://www.google.com";
-            NetworkUtil task = new NetworkUtil( url, new MyInterface() {
-                @Override
-                public void myMethod(boolean result) {
-                    if (result == true) {
-                        Fragment fragment = new IonicFragment();
-                        String title = "IONIC";
-                        if (fragment != null) {
-                            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                            ft.replace(R.id.container_body, fragment);
-                            ft.commit();
-                        }
-                    } else {
-                        Toast.makeText(MainActivity.this, "Favor verificar sua conexao!", Toast.LENGTH_LONG).show();
-                    }
-                }
-            });
-            task.execute();
-        }else if (id == R.id.nav_res) {
-
-            title = "Marmita";
-            fragment = new RestaurantesFragment();
-
-
         }
 
         if (fragment != null) {
@@ -390,6 +348,25 @@ public class MainActivity extends AppCompatActivity
             if (mListener != null)
                 mListener.myMethod(result);
 
+        }
+
+    }
+
+    public static boolean pingURL(String url, int timeout) {
+
+        HttpURLConnection connection = null;
+        try {
+            connection = (HttpURLConnection) new URL(url).openConnection();
+            connection.setRequestMethod("HEAD");
+            int responseCode = connection.getResponseCode();
+            if (responseCode != 200) {
+                return false;
+            } else {
+                return true;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
         }
 
     }
